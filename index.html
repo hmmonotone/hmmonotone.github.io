@@ -44,26 +44,13 @@
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
     }
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      line-height: 1.8;
+    }
     .menu-category {
       margin-bottom: 2.5rem;
-    }
-    .tile {
-      background-color: #711717;
-      padding: 1rem;
-      margin: 0.5rem;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
-    .tile:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      background-color: #882323;
-    }
-    .tile-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
     }
     .footer {
       text-align: center;
@@ -91,48 +78,120 @@
 
     <div class="menu-category">
       <strong>Litti (Pure Ghee)</strong>
-      <div class="tile-grid">
-        <div class="tile">Fried Litti Chokha</div>
-        <div class="tile">Egg Curry Litti</div>
-        <div class="tile">Mutton Fried Litti</div>
-        <div class="tile">Chicken Litti</div>
-      </div>
+      <ul>
+        <li>Litti Chokha</li>
+        <li>Fried Litti Chokha</li>
+        <li>Egg Curry Litti</li>
+        <li>Egg Curry Fried Litti</li>
+        <li>Chicken Litti</li>
+        <li>Chicken Fried Litti</li>
+        <li>Mutton Litti</li>
+        <li>Mutton Fried Litti</li>
+      </ul>
     </div>
 
     <div class="menu-category">
-      <strong>Curries & Rice Bowls</strong>
-      <div class="tile-grid">
-        <div class="tile">Bihari Champaran Chicken/Mutton</div>
-        <div class="tile">Dal Tadka, Aloo Dum, Paneer Masala</div>
-        <div class="tile">Served with Ghee Rice or Jeera Rice</div>
-      </div>
+      <strong>Curries</strong>
+      <ul>
+        <li>Dal Tadka</li>
+        <li>Aloo Dum</li>
+        <li>Paneer Masala</li>
+        <li>Egg Masala</li>
+        <li>Bihari Champaran (Egg)</li>
+        <li>Bihari Champaran Chicken</li>
+        <li>Style Chicken Curry</li>
+        <li>Bihari Champaran Mutton</li>
+        <li>Style Mutton Curry</li>
+      </ul>
     </div>
 
     <div class="menu-category">
-      <strong>Combos & Parathas</strong>
-      <div class="tile-grid">
-        <div class="tile">Sattu/Wheat Paratha Combos with Aloo Dum</div>
-        <div class="tile">...with Paneer or Mutton</div>
-        <div class="tile">Roti Combos with Classic Bihari Curries</div>
-      </div>
+      <strong>Breads</strong>
+      <ul>
+        <li>Plain Poori</li>
+        <li>Sattu Poori</li>
+        <li>Tawa Roti</li>
+        <li>Ghee Tawa Roti</li>
+        <li>Wheat Paratha</li>
+        <li>Aloo Paratha</li>
+        <li>Sattu Paratha</li>
+        <li>Paneer Paratha</li>
+      </ul>
     </div>
 
     <div class="menu-category">
-      <strong>Desserts</strong>
-      <div class="tile-grid">
-        <div class="tile">Rabdi Kheer</div>
-        <div class="tile">Carrot Halwa</div>
-      </div>
+      <strong>Rice</strong>
+      <ul>
+        <li>Plain Rice</li>
+        <li>Ghee Rice</li>
+        <li>Ghee Jeera Rice</li>
+      </ul>
+    </div>
+
+    <div class="menu-category">
+      <strong>Paratha Combos</strong>
+      <ul>
+        <li>Paratha (Sattu/Wheat ×2/Paneer/Aloo) + Aloo Dum</li>
+        <li>Paratha (Sattu/Wheat ×2/Paneer/Aloo) + Paneer Masala</li>
+        <li>Paratha (Sattu/Wheat ×2/Paneer/Aloo) + Egg Masala</li>
+        <li>Paratha (Sattu/Wheat ×2/Paneer/Aloo) + Chicken Curry</li>
+        <li>Paratha (Sattu/Wheat ×2/Paneer/Aloo) + Mutton Curry</li>
+      </ul>
+    </div>
+
+    <div class="menu-category">
+      <strong>Roti Combos</strong>
+      <ul>
+        <li>Tawa Roti (3 Plain/2 Ghee) + Dal Tadka</li>
+        <li>Tawa Roti (3 Plain/2 Ghee) + Aloo Dum</li>
+        <li>Tawa Roti (3 Plain/2 Ghee) + Paneer Masala</li>
+        <li>Tawa Roti (3 Plain/2 Ghee) + Egg Masala</li>
+        <li>Tawa Roti (3 Plain/2 Ghee) + Chicken Masala</li>
+        <li>Tawa Roti (3 Plain/2 Ghee) + Mutton Masala</li>
+      </ul>
+    </div>
+
+    <div class="menu-category">
+      <strong>Rice Bowls</strong>
+      <ul>
+        <li>Bihari Famous Rice Bowl (Dal + Rice + Chokha)</li>
+        <li>Aloo Dum Rice Bowl</li>
+        <li>Paneer Masala Rice Bowl</li>
+        <li>Egg Masala Rice Bowl</li>
+        <li>Chicken Rice Bowl</li>
+        <li>Mutton Rice Bowl</li>
+      </ul>
     </div>
 
     <div class="menu-category">
       <strong>Beverages</strong>
-      <div class="tile-grid">
-        <div class="tile">Masala Chaas</div>
-        <div class="tile">Sattu</div>
-        <div class="tile">Cold Drinks</div>
-        <div class="tile">Mineral & Bottled Water</div>
-      </div>
+      <ul>
+        <li>Kulhad Chyawan Lassi</li>
+        <li>Masala Chaas</li>
+        <li>Masala Sattu</li>
+        <li>Classic Sattu</li>
+        <li>Cold Drink (Glass Bottle)</li>
+        <li>Cold Drink (250ml)</li>
+        <li>Water Bottle (500ml)</li>
+        <li>Water Bottle (1000ml)</li>
+      </ul>
+    </div>
+
+    <div class="menu-category">
+      <strong>Desserts</strong>
+      <ul>
+        <li>Rabdi Kheer</li>
+        <li>Carrot Halwa</li>
+      </ul>
+    </div>
+
+    <div class="menu-category">
+      <strong>Extras</strong>
+      <ul>
+        <li>Litti</li>
+        <li>Fried Litti</li>
+        <li>Chokha</li>
+      </ul>
     </div>
 
     <div class="contact">
