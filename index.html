@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +29,7 @@
       color: #f9e79f;
     }
     .section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
       background: #5d1717;
       padding: 2rem;
@@ -45,17 +44,26 @@
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
     }
-    ul {
-      list-style: none;
-      padding-left: 0;
-      line-height: 1.8;
-    }
-    li::before {
-      content: '🍽️';
-      margin-right: 8px;
-    }
     .menu-category {
       margin-bottom: 2.5rem;
+    }
+    .tile {
+      background-color: #711717;
+      padding: 1rem;
+      margin: 0.5rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      background-color: #882323;
+    }
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
     }
     .footer {
       text-align: center;
@@ -80,44 +88,53 @@
   <div class="tagline">Cloud Kitchen & Catering | Bihar’s Delight Every Bite</div>
   <div class="section">
     <h2>Our Specialties</h2>
+
     <div class="menu-category">
       <strong>Litti (Pure Ghee)</strong>
-      <ul>
-        <li>Fried Litti Chokha</li>
-        <li>Egg Curry Litti</li>
-        <li>Mutton Fried Litti</li>
-        <li>Chicken Litti</li>
-      </ul>
+      <div class="tile-grid">
+        <div class="tile">Fried Litti Chokha</div>
+        <div class="tile">Egg Curry Litti</div>
+        <div class="tile">Mutton Fried Litti</div>
+        <div class="tile">Chicken Litti</div>
+      </div>
     </div>
+
     <div class="menu-category">
       <strong>Curries & Rice Bowls</strong>
-      <ul>
-        <li>Bihari Champaran Chicken/Mutton</li>
-        <li>Dal Tadka, Aloo Dum, Paneer Masala</li>
-        <li>Served with Ghee Rice or Jeera Rice</li>
-      </ul>
+      <div class="tile-grid">
+        <div class="tile">Bihari Champaran Chicken/Mutton</div>
+        <div class="tile">Dal Tadka, Aloo Dum, Paneer Masala</div>
+        <div class="tile">Served with Ghee Rice or Jeera Rice</div>
+      </div>
     </div>
+
     <div class="menu-category">
       <strong>Combos & Parathas</strong>
-      <ul>
-        <li>Sattu/Wheat Paratha Combos with Aloo Dum, Paneer or Mutton</li>
-        <li>Roti Combos with Classic Bihari Curries</li>
-      </ul>
+      <div class="tile-grid">
+        <div class="tile">Sattu/Wheat Paratha Combos with Aloo Dum</div>
+        <div class="tile">...with Paneer or Mutton</div>
+        <div class="tile">Roti Combos with Classic Bihari Curries</div>
+      </div>
     </div>
+
     <div class="menu-category">
       <strong>Desserts</strong>
-      <ul>
-        <li>Rabdi Kheer</li>
-        <li>Carrot Halwa</li>
-      </ul>
+      <div class="tile-grid">
+        <div class="tile">Rabdi Kheer</div>
+        <div class="tile">Carrot Halwa</div>
+      </div>
     </div>
+
     <div class="menu-category">
       <strong>Beverages</strong>
-      <ul>
-        <li>Masala Chaas | Sattu | Cold Drinks</li>
-        <li>Mineral & Bottled Water</li>
-      </ul>
+      <div class="tile-grid">
+        <div class="tile">Masala Chaas</div>
+        <div class="tile">Sattu</div>
+        <div class="tile">Cold Drinks</div>
+        <div class="tile">Mineral & Bottled Water</div>
+      </div>
     </div>
+
     <div class="contact">
       <h2>Contact & Orders</h2>
       <p>📞 Call us at: <strong>+91-XXXXXXXXXX</strong></p>
