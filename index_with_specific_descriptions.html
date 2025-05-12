@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>d'LITTIcious | Final Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(145deg, #711717, #912727);
+      color: #ffd966;
+    }
+    .logo {
+      text-align: center;
+      padding-top: 2rem;
+    }
+    .logo img {
+      max-width: 220px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .tagline {
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 1rem auto 2.5rem;
+      font-weight: bold;
+      color: #f9e79f;
+    }
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      background: #5d1717;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+    .menu-item {
+      background-color: #6d1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    }
+    .menu-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .menu-item p {
+      margin: 0;
+      padding: 0.8rem;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background: #5d1717;
+      color: #ffd966;
+      margin: 10% auto;
+      padding: 1.5rem;
+      border-radius: 14px;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    }
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .modal-content h3 {
+      margin: 0.5rem 0;
+    }
+    .modal-content p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .close-btn {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #ffd966;
+    }
+    .modal-content a {
+      background-color: #ffd966;
+      color: #5d1717;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      background-color: #3e1010;
+      color: #ffe8a1;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo"><img src="logo.png" alt="d'LITTIcious Logo"></div>
+  <div class="tagline">Cloud Kitchen & Catering | Bihar’s Delight Every Bite</div>
+  <div class="section">
+    <h2>Our Specialties</h2>
+    <div class="menu-grid">
+      
+    <div class="menu-item" onclick="openModal('Chicken Taas', 'images/chicken_taas.png', 'Tender chicken chunks pan-fried with bold spices – crispy outside, juicy inside, and full of flavor.', '₹--')">
+      <img src="images/chicken_taas.png" alt="Chicken Taas">
+      <p>Chicken Taas</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Mutton Taas', 'images/mutton_taas.png', 'Spicy, crisp-fried mutton bites marinated in Bihari spices – bold, juicy, and packed with flavor.', '₹--')">
+      <img src="images/mutton_taas.png" alt="Mutton Taas">
+      <p>Mutton Taas</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Simply Sattu', 'images/simply_sattu.png', 'Cool, refreshing drink made from roasted gram flour – light, healthy, and energizing.', '₹--')">
+      <img src="images/simply_sattu.png" alt="Simply Sattu">
+      <p>Simply Sattu</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Masala Sattu', 'images/masala_sattu.png', 'Savory sattu drink with lemon, salt, chopped onion, and fresh coriander – refreshing and full of flavor.', '₹--')">
+      <img src="images/masala_sattu.png" alt="Masala Sattu">
+      <p>Masala Sattu</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Butter Milk', 'images/butter_milk.png', 'Cool and tangy buttermilk with roasted cumin, black salt, and fresh coriander – refreshing and easy on the stomach.', '₹--')">
+      <img src="images/butter_milk.png" alt="Butter Milk">
+      <p>Butter Milk</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Nimbu Pani (Sweet)', 'images/nimbu_pani_sweet.png', 'Refreshing lemon drink with sugar – a perfect balance of tangy and sweet.', '₹--')">
+      <img src="images/nimbu_pani_sweet.png" alt="Nimbu Pani (Sweet)">
+      <p>Nimbu Pani (Sweet)</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Nimbu Pani (Salty)', 'images/nimbu_pani_salty.png', 'Tangy lemon water with a dash of salt and spices – cooling, savory, and thirst-quenching.', '₹--')">
+      <img src="images/nimbu_pani_salty.png" alt="Nimbu Pani (Salty)">
+      <p>Nimbu Pani (Salty)</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Cold-Drinks', 'images/colddrinks.png', 'Chilled, fizzy, and bursting with flavor – the perfect way to cool off and refresh yourself!', '₹--')">
+      <img src="images/colddrinks.png" alt="Cold-Drinks">
+      <p>Cold-Drinks</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Litti Chokha', 'images/litti_chokha.png', 'Smoky wheat balls filled with sattu mix, served with spiced chokha, green chutney, and tomato chutney – a true Bihari treat.', '₹--')">
+      <img src="images/litti_chokha.png" alt="Litti Chokha">
+      <p>Litti Chokha</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Champaran Mutton', 'images/champaran_mutton.png', 'Spicy, slow-cooked mutton in mustard oil with bold, rustic Bihari spices – rich and full of flavor.', '₹--')">
+      <img src="images/champaran_mutton.png" alt="Champaran Mutton">
+      <p>Champaran Mutton</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Latpat Chicken', 'images/latpat_chicken.png', 'Spicy, semi-thick chicken curry packed with bold Bihari flavors – rich, rustic, and satisfying.', '₹--')">
+      <img src="images/latpat_chicken.png" alt="Latpat Chicken">
+      <p>Latpat Chicken</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Anda Curry', 'images/anda_curry.png', 'Golden-fried boiled eggs in a spiced onion-tomato gravy – rich, hearty, and full of flavor.', '₹--')">
+      <img src="images/anda_curry.png" alt="Anda Curry">
+      <p>Anda Curry</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Paneer Masala', 'images/paneer_masala.png', 'Soft paneer cubes simmered in a rich, spiced onion-tomato gravy – creamy, comforting, and full of flavor.', '₹--')">
+      <img src="images/paneer_masala.png" alt="Paneer Masala">
+      <p>Paneer Masala</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Tawa Roti', 'images/tawa_roti.png', 'Soft, fresh whole wheat roti cooked on a tawa – simple, warm, and wholesome.', '₹--')">
+      <img src="images/tawa_roti.png" alt="Tawa Roti">
+      <p>Tawa Roti</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Steam Basmati Rice', 'images/steam_basmati_rice.png', 'Fluffy, steamed basmati rice – light, aromatic, and the perfect base for any curry.', '₹--')">
+      <img src="images/steam_basmati_rice.png" alt="Steam Basmati Rice">
+      <p>Steam Basmati Rice</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Ghee Jeera Rice', 'images/ghee_jeera_rice.png', 'Fluffy basmati rice tempered with ghee and cumin seeds – aromatic, flavorful, and perfect with any curry.', '₹--')">
+      <img src="images/ghee_jeera_rice.png" alt="Ghee Jeera Rice">
+      <p>Ghee Jeera Rice</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Ghee Tikona Paratha', 'images/ghee_tikona_paratha.png', 'Crispy, triangle-shaped paratha made with whole wheat and ghee – rich, flaky, and irresistible.', '₹--')">
+      <img src="images/ghee_tikona_paratha.png" alt="Ghee Tikona Paratha">
+      <p>Ghee Tikona Paratha</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Sattu Paratha', 'images/sattu_paratha.png', 'Whole wheat paratha stuffed with spiced sattu masala – healthy, flavorful, and filling.', '₹--')">
+      <img src="images/sattu_paratha.png" alt="Sattu Paratha">
+      <p>Sattu Paratha</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Choose Your Meal', 'images/choose_your_meal.png', 'Choice of litti, roti, paratha, or rice served with rich, spiced curry – mutton, chicken, egg, or paneer.', '₹--')">
+      <img src="images/choose_your_meal.png" alt="Choose Your Meal">
+      <p>Choose Your Meal</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Special Mutton Thali', 'images/special_mutton_thali.png', 'A royal Bihari platter with litti, mutton curry, mutton taas, chokha, rice, salad, kheer, and a refreshing drink.', '₹--')">
+      <img src="images/special_mutton_thali.png" alt="Special Mutton Thali">
+      <p>Special Mutton Thali</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Special Chicken Thali', 'images/special_chicken_thali.png', 'A wholesome Bihari platter with litti, chicken curry, chicken taas, chokha, rice, salad, kheer, and a refreshing drink.', '₹--')">
+      <img src="images/special_chicken_thali.png" alt="Special Chicken Thali">
+      <p>Special Chicken Thali</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Special Egg Thali', 'images/special_egg_thali.png', 'A protein-rich Bihari thali with litti, egg curry, egg bhurji, chokha, rice, salad, kheer, and a refreshing drink.', '₹--')">
+      <img src="images/special_egg_thali.png" alt="Special Egg Thali">
+      <p>Special Egg Thali</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Special Paneer Thali', 'images/special_paneer_thali.png', 'A wholesome vegetarian thali with litti, paneer curry, paneer bhurji, chokha, rice, salad, kheer, and a refreshing drink.', '₹--')">
+      <img src="images/special_paneer_thali.png" alt="Special Paneer Thali">
+      <p>Special Paneer Thali</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Baingan Bharta', 'images/baingan_bharta.png', 'Smoky mash of eggplant, potato, tomato, onion, and chili – rustic, bold, and packed with flavor', '₹--')">
+      <img src="images/baingan_bharta.png" alt="Baingan Bharta">
+      <p>Baingan Bharta</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Sweet Tomato chutney', 'images/sweet_tomato_chutney.png', 'Sweet and tangy tomato chutney with mild spices – perfect with litti or paratha.', '₹--')">
+      <img src="images/sweet_tomato_chutney.png" alt="Sweet Tomato chutney">
+      <p>Sweet Tomato chutney</p>
+    </div>
+    
+    <div class="menu-item" onclick="openModal('Dry Fruit Gud Kheer', 'images/dry_fruit_gud_kheer.png', 'Traditional rice kheer sweetened with jaggery and enriched with dry fruits – creamy, wholesome, and naturally sweet.', '₹--')">
+      <img src="images/dry_fruit_gud_kheer.png" alt="Dry Fruit Gud Kheer">
+      <p>Dry Fruit Gud Kheer</p>
+    </div>
+    
+    </div>
+  </div>
+
+  <div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <p id="modalPrice"></p>
+      <a id="modalOrder" href="#" target="_blank">Order on WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="footer">&copy; 2025 d'LITTIcious. All Rights Reserved.</div>
+
+  <script>
+    function openModal(title, imgSrc, description, price) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modalDesc').textContent = description;
+      document.getElementById('modalPrice').textContent = price;
+      document.getElementById('modalOrder').href = 'https://wa.me/?text=I%20want%20to%20order%20' + encodeURIComponent(title);
+      document.getElementById('modal').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

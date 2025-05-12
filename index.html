@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>d'LITTIcious | Bihar's Delight Every Bite</title>
+  <title>d'LITTIcious | Your Image Menu</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
@@ -29,28 +29,93 @@
       color: #f9e79f;
     }
     .section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       background: #5d1717;
       padding: 2rem;
       border-radius: 20px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     }
-    h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #ffeb99;
-      border-bottom: 2px solid #ffdd55;
-      padding-bottom: 0.5rem;
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+    .menu-item {
+      background-color: #6d1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    }
+    .menu-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .menu-item p {
+      margin: 0;
+      padding: 0.8rem;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background: #5d1717;
+      color: #ffd966;
+      margin: 10% auto;
+      padding: 1.5rem;
+      border-radius: 14px;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    }
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
       margin-bottom: 1rem;
     }
-    ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      line-height: 1.8;
+    .modal-content h3 {
+      margin: 0.5rem 0;
     }
-    .menu-category {
-      margin-bottom: 2.5rem;
+    .modal-content p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    .close-btn {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #ffd966;
+    }
+    .modal-content a {
+      background-color: #ffd966;
+      color: #5d1717;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 1rem;
     }
     .footer {
       text-align: center;
@@ -59,150 +124,123 @@
       background-color: #3e1010;
       color: #ffe8a1;
     }
-    .contact {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .contact p {
-      margin: 0.4rem 0;
-    }
   </style>
 </head>
 <body>
-  <div class="logo">
-    <img src="logo.png" alt="d'LITTIcious Logo">
-  </div>
+  <div class="logo"><img src="logo.png" alt="d'LITTIcious Logo"></div>
   <div class="tagline">Cloud Kitchen & Catering | Bihar’s Delight Every Bite</div>
+
   <div class="section">
     <h2>Our Specialties</h2>
+    <div class="menu-grid">
 
-    <div class="menu-category">
-      <strong>Litti (Pure Ghee)</strong>
-      <ul>
-        <li>Litti Chokha</li>
-        <li>Fried Litti Chokha</li>
-        <li>Egg Curry Litti</li>
-        <li>Egg Curry Fried Litti</li>
-        <li>Chicken Litti</li>
-        <li>Chicken Fried Litti</li>
-        <li>Mutton Litti</li>
-        <li>Mutton Fried Litti</li>
-      </ul>
-    </div>
+      <div class="menu-item" onclick="openModal('Anda Curry', 'images/anda_curry.png', 'Anda Curry - authentic Bihari flavor.')">
+        <img src="images/anda_curry.png" alt="Anda Curry">
+        <p>Anda Curry</p>
+      </div>
 
-    <div class="menu-category">
-      <strong>Curries</strong>
-      <ul>
-        <li>Dal Tadka</li>
-        <li>Aloo Dum</li>
-        <li>Paneer Masala</li>
-        <li>Egg Masala</li>
-        <li>Bihari Champaran (Egg)</li>
-        <li>Bihari Champaran Chicken</li>
-        <li>Style Chicken Curry</li>
-        <li>Bihari Champaran Mutton</li>
-        <li>Style Mutton Curry</li>
-      </ul>
-    </div>
+      <div class="menu-item" onclick="openModal('Chicken Taas', 'images/chicken_taas.png', 'Chicken Taas - authentic Bihari flavor.')">
+        <img src="images/chicken_taas.png" alt="Chicken Taas">
+        <p>Chicken Taas</p>
+      </div>
 
-    <div class="menu-category">
-      <strong>Breads</strong>
-      <ul>
-        <li>Plain Poori</li>
-        <li>Sattu Poori</li>
-        <li>Tawa Roti</li>
-        <li>Ghee Tawa Roti</li>
-        <li>Wheat Paratha</li>
-        <li>Aloo Paratha</li>
-        <li>Sattu Paratha</li>
-        <li>Paneer Paratha</li>
-      </ul>
-    </div>
+      <div class="menu-item" onclick="openModal('Latpat Chicken', 'images/latpat_chicken.png', 'Latpat Chicken - authentic Bihari flavor.')">
+        <img src="images/latpat_chicken.png" alt="Latpat Chicken">
+        <p>Latpat Chicken</p>
+      </div>
 
-    <div class="menu-category">
-      <strong>Rice</strong>
-      <ul>
-        <li>Plain Rice</li>
-        <li>Ghee Rice</li>
-        <li>Ghee Jeera Rice</li>
-      </ul>
-    </div>
+      <div class="menu-item" onclick="openModal('Mutton Taas', 'images/mutton_taas.png', 'Mutton Taas - authentic Bihari flavor.')">
+        <img src="images/mutton_taas.png" alt="Mutton Taas">
+        <p>Mutton Taas</p>
+      </div>
 
-    <div class="menu-category">
-      <strong>Paratha Combos</strong>
-      <ul>
-        <li>Paratha (Sattu/Wheat ×2/Paneer/Aloo) + Aloo Dum</li>
-        <li>Paratha (Sattu/Wheat ×2/Paneer/Aloo) + Paneer Masala</li>
-        <li>Paratha (Sattu/Wheat ×2/Paneer/Aloo) + Egg Masala</li>
-        <li>Paratha (Sattu/Wheat ×2/Paneer/Aloo) + Chicken Curry</li>
-        <li>Paratha (Sattu/Wheat ×2/Paneer/Aloo) + Mutton Curry</li>
-      </ul>
-    </div>
+      <div class="menu-item" onclick="openModal('Paneer Masala', 'images/paneer_masala.png', 'Paneer Masala - authentic Bihari flavor.')">
+        <img src="images/paneer_masala.png" alt="Paneer Masala">
+        <p>Paneer Masala</p>
+      </div>
 
-    <div class="menu-category">
-      <strong>Roti Combos</strong>
-      <ul>
-        <li>Tawa Roti (3 Plain/2 Ghee) + Dal Tadka</li>
-        <li>Tawa Roti (3 Plain/2 Ghee) + Aloo Dum</li>
-        <li>Tawa Roti (3 Plain/2 Ghee) + Paneer Masala</li>
-        <li>Tawa Roti (3 Plain/2 Ghee) + Egg Masala</li>
-        <li>Tawa Roti (3 Plain/2 Ghee) + Chicken Masala</li>
-        <li>Tawa Roti (3 Plain/2 Ghee) + Mutton Masala</li>
-      </ul>
-    </div>
+      <div class="menu-item" onclick="openModal('Tawa Roti', 'images/tawa_roti.png', 'Tawa Roti - authentic Bihari flavor.')">
+        <img src="images/tawa_roti.png" alt="Tawa Roti">
+        <p>Tawa Roti</p>
+      </div>
 
-    <div class="menu-category">
-      <strong>Rice Bowls</strong>
-      <ul>
-        <li>Bihari Famous Rice Bowl (Dal + Rice + Chokha)</li>
-        <li>Aloo Dum Rice Bowl</li>
-        <li>Paneer Masala Rice Bowl</li>
-        <li>Egg Masala Rice Bowl</li>
-        <li>Chicken Rice Bowl</li>
-        <li>Mutton Rice Bowl</li>
-      </ul>
-    </div>
+      <div class="menu-item" onclick="openModal('Butter Milk', 'images/butter_milk.png', 'Butter Milk - authentic Bihari flavor.')">
+        <img src="images/butter_milk.png" alt="Butter Milk">
+        <p>Butter Milk</p>
+      </div>
 
-    <div class="menu-category">
-      <strong>Beverages</strong>
-      <ul>
-        <li>Kulhad Chyawan Lassi</li>
-        <li>Masala Chaas</li>
-        <li>Masala Sattu</li>
-        <li>Classic Sattu</li>
-        <li>Cold Drink (Glass Bottle)</li>
-        <li>Cold Drink (250ml)</li>
-        <li>Water Bottle (500ml)</li>
-        <li>Water Bottle (1000ml)</li>
-      </ul>
-    </div>
+      <div class="menu-item" onclick="openModal('Ghee Jeera Rice', 'images/ghee_jeera_rice.png', 'Ghee Jeera Rice - authentic Bihari flavor.')">
+        <img src="images/ghee_jeera_rice.png" alt="Ghee Jeera Rice">
+        <p>Ghee Jeera Rice</p>
+      </div>
 
-    <div class="menu-category">
-      <strong>Desserts</strong>
-      <ul>
-        <li>Rabdi Kheer</li>
-        <li>Carrot Halwa</li>
-      </ul>
-    </div>
+      <div class="menu-item" onclick="openModal('Litti Chokha', 'images/litti_chokha.png', 'Litti Chokha - authentic Bihari flavor.')">
+        <img src="images/litti_chokha.png" alt="Litti Chokha">
+        <p>Litti Chokha</p>
+      </div>
 
-    <div class="menu-category">
-      <strong>Extras</strong>
-      <ul>
-        <li>Litti</li>
-        <li>Fried Litti</li>
-        <li>Chokha</li>
-      </ul>
-    </div>
+      <div class="menu-item" onclick="openModal('Nimbu Pani (Salty)', 'images/nimbu_pani_salt.png', 'Nimbu Pani (Salty) - authentic Bihari flavor.')">
+        <img src="images/nimbu_pani_salt.png" alt="Nimbu Pani (Salty)">
+        <p>Nimbu Pani (Salty)</p>
+      </div>
 
-    <div class="contact">
-      <h2>Contact & Orders</h2>
-      <p>📞 Call us at: <strong>+91-XXXXXXXXXX</strong></p>
-      <p>📍 Based in Bihar | Order on Zomato, Swiggy & WhatsApp</p>
-      <p>📦 Catering available for events & parties</p>
+      <div class="menu-item" onclick="openModal('Simply Sattu', 'images/simply_sattu.png', 'Simply Sattu - authentic Bihari flavor.')">
+        <img src="images/simply_sattu.png" alt="Simply Sattu">
+        <p>Simply Sattu</p>
+      </div>
+
+      <div class="menu-item" onclick="openModal('Champaran Mutton', 'images/champaran_mutton.png', 'Champaran Mutton - authentic Bihari flavor.')">
+        <img src="images/champaran_mutton.png" alt="Champaran Mutton">
+        <p>Champaran Mutton</p>
+      </div>
+
+      <div class="menu-item" onclick="openModal('Ghee Tikona Paratha', 'images/ghee_tikona_paratha.png', 'Ghee Tikona Paratha - authentic Bihari flavor.')">
+        <img src="images/ghee_tikona_paratha.png" alt="Ghee Tikona Paratha">
+        <p>Ghee Tikona Paratha</p>
+      </div>
+
+      <div class="menu-item" onclick="openModal('Masala Sattu', 'images/masala_sattu.png', 'Masala Sattu - authentic Bihari flavor.')">
+        <img src="images/masala_sattu.png" alt="Masala Sattu">
+        <p>Masala Sattu</p>
+      </div>
+
+      <div class="menu-item" onclick="openModal('Nimbu Pani (Sweet)', 'images/nimbu_pani_sweet.png', 'Nimbu Pani (Sweet) - authentic Bihari flavor.')">
+        <img src="images/nimbu_pani_sweet.png" alt="Nimbu Pani (Sweet)">
+        <p>Nimbu Pani (Sweet)</p>
+      </div>
+
+      <div class="menu-item" onclick="openModal('Steam Basmati Rice', 'images/steam_basmati_rice.png', 'Steam Basmati Rice - authentic Bihari flavor.')">
+        <img src="images/steam_basmati_rice.png" alt="Steam Basmati Rice">
+        <p>Steam Basmati Rice</p>
+      </div>
+
     </div>
   </div>
-  <div class="footer">
-    &copy; 2025 d'LITTIcious. All Rights Reserved.
+
+  <div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <img id="modalImg" src="" alt="">
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <a id="modalOrder" href="#" target="_blank">Order on WhatsApp</a>
+    </div>
   </div>
+
+  <div class="footer">&copy; 2025 d'LITTIcious. All Rights Reserved.</div>
+
+  <script>
+    function openModal(title, imgSrc, description) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalImg').src = imgSrc;
+      document.getElementById('modalDesc').textContent = description;
+      document.getElementById('modalOrder').href =
+        'https://wa.me/?text=I%20want%20to%20order%20' + encodeURIComponent(title);
+      document.getElementById('modal').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
